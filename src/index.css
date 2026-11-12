@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* ============================================================
+   HOME ESSENTIALS & FURNEXA LUXURY LIGHT THEME DESIGN SYSTEM
+   Reference: https://homeessentials.in/ & https://furnexa.framer.website/
+   Palette: Pure White (#FFFFFF), Warm Cream (#FAF8F5), Warm Porcelain (#F6F3EE)
+   Accents: Terracotta Amber Bronze (#C07A48), Rich Charcoal (#1A1A1A), Muted Gray (#6E6E73)
+   ============================================================ */
+
+@layer base {
+  :root {
+    --theme-bg:           #FFFFFF;
+    --theme-cream:        #FAF8F5;
+    --theme-card:         #FFFFFF;
+    --theme-card-subtle:  #F7F5F0;
+    --theme-dark:         #1A1A1A;
+    --theme-muted:        #6E6E73;
+    --theme-border:       #EBE6DF;
+    --theme-accent:       #C07A48;
+    --theme-accent-dark:  #A86333;
+    --theme-accent-light: #FFF4E8;
+    --theme-gold:         #D4AF37;
+  }
+
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    background-color: var(--theme-bg);
+  }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--theme-bg);
+    color: var(--theme-dark);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Headings: Bricolage Grotesque */
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: var(--theme-dark);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  ::selection {
+    background: #C07A48;
+    color: #FFFFFF;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #FFFFFF; }
+  ::-webkit-scrollbar-thumb { background: #E0DAD0; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #C07A48; }
+}
+
+/* Typography Classes */
+.font-heading { font-family: 'Bricolage Grotesque', sans-serif; }
+.font-sans    { font-family: 'DM Sans', system-ui, sans-serif; }
+.font-mono    { font-family: 'Space Grotesk', monospace; }
+
+/* Catchy Accent Buttons (Home Essentials Style) */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #C07A48;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1px solid #C07A48;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(192, 122, 72, 0.22);
+}
+
+.btn-accent:hover {
+  background-color: #A86333;
+  border-color: #A86333;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(192, 122, 72, 0.32);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1px solid #1A1A1A;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-dark:hover {
+  background-color: #000000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Home Essentials Card Hover Physics */
+.he-product-card {
+  background-color: #FFFFFF;
+  border: 1px solid #EBE6DF;
+  border-radius: 1.25rem;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.he-product-card:hover {
+  border-color: #C07A48;
+  box-shadow: 0 16px 36px rgba(192, 122, 72, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Home Essentials Sale Badge */
+.he-badge-sale {
+  background: linear-gradient(135deg, #C07A48 0%, #D48B57 100%);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 2px 8px rgba(192, 122, 72, 0.28);
+}
+
+/* Continuous Marquee Animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.furnexa-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.furnexa-marquee-track:hover {
+  animation-play-state: paused;
+}
